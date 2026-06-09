@@ -1,29 +1,33 @@
 import './Header.css';
 import Link from "next/link";
+interface Props {
+  logoSrc: string;
+  buttonText: string;
+  navLinks: {
+    label: string;
+    href: string;
+  }[];
+}
 
-export default function Header() {
+export default function Header({ logoSrc, buttonText, navLinks }: Props) {
   return (
     <header className="header">
       <div className="container">
         <Link href="/" className="logo">
-          <img src="LogoOrange.png" alt="logo" />
+          <img src={logoSrc} alt="logo" />
         </Link>
 
         <nav className="nav">
-          <Link href="/">Головна</Link>
-          <Link href="/menu">Меню</Link>
-          <Link href="/delivery">Доставка</Link>
-          <Link href="/contacts">Контакти</Link>
+          {navLinks.map((item, index) => (
+            <Link key={index} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
-  
-
         <button className="order-btn">
-          зареєструватися
+          {buttonText}
         </button>
-        
-
-
       </div>
     </header>
   );
