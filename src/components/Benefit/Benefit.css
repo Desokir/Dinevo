@@ -1,0 +1,170 @@
+.benefits {
+  padding: 140px 20px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+.benefitsTitle {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  color: #000;
+  margin-top: 30px;
+}
+
+.benefitsRow {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 90px;
+  width: 100%;
+}
+
+.benefitItem {
+  width: 420px;
+  min-height: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+  gap: 22px;
+}
+
+.benefitItem img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.benefitItem h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.benefitItem p {
+  font-size: 19px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+.buttonSearch {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  cursor: pointer;
+  background-color: rgb(4, 143, 4);
+  border: 2px solid green;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 10px 5%;
+  margin-top: -100px;
+align-items: center;
+  transition: 0.2s;
+}
+
+.buttonSearch:hover {
+  background-color: rgb(2, 99, 2);
+}
+@media (max-width: 1440px) {
+  .benefits {
+    padding: 120px 20px 100px;
+    gap: 70px;
+  }
+
+  .benefitsTitle {
+    font-size: 46px;
+  }
+
+  .benefitsRow {
+    gap: 70px;
+  }
+
+  .benefitItem {
+    width: 380px;
+    min-height: 500px;
+  }
+
+  .benefitItem img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .benefitItem h2 {
+    font-size: 27px;
+  }
+
+  .benefitItem p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1366px) {
+  .benefitsRow {
+    gap: 50px;
+  }
+
+  .benefitItem {
+    width: 340px;
+  }
+
+  .benefitsTitle {
+    font-size: 42px;
+  }
+}
+@media (max-width: 1024px) {
+  .benefits {
+    padding: 100px 20px 80px;
+    gap: 60px;
+  }
+
+  .benefitsTitle {
+    font-size: 38px;
+  }
+
+  .benefitsRow {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .benefitItem {
+    width: 45%;
+    min-height: auto;
+  }
+
+  .benefitItem img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .benefitItem h2 {
+    font-size: 24px;
+  }
+
+  .benefitItem p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefitsTitle {
+    font-size: 32px;
+  }
+
+  .benefitsRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .benefitItem {
+    width: 90%;
+  }
+}
