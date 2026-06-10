@@ -1,0 +1,59 @@
+.JoinUs {
+    color: black;
+    margin-bottom: 68px;
+}
+
+.titleJoin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.titleJoin>p {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.outJoin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boxJoin {
+    width: 400px;
+    /* height: 500px; */
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.boxJoin img {
+    width: 250px;        
+    height: 250px;       
+    border-radius: 50%;   
+    object-fit: cover;   
+    margin-bottom: 20px;  
+}
+
+.titleOut {
+    font-size: 22px;
+    font-weight: 450;
+}
+
+.deskOut {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.signOut {
+    padding: 5px 10px;
+    background-color: rgba(1, 173, 41, 0.808);
+    border-radius: 12px;
+    color: white;
+    margin-top: 10px;
+}
