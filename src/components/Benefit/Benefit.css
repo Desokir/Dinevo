@@ -157,6 +157,13 @@ align-items: center;
   .benefitsTitle {
     font-size: 32px;
   }
+  .buttonSearch {
+  position: static;
+  margin: 10px auto 0 auto;
+  font-size: 18px;
+  width: 90%;
+  padding: 12px 0;
+}
 
   .benefitsRow {
     flex-direction: column;

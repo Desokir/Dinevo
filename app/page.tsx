@@ -23,8 +23,8 @@ const linksFooter = {
 }
 const categoriFooter = ['Ресторани', 'Супермаркети', 'Аптеки', 'Квіти']
 const contacts = {
-    'Number': '+380956848943',
-    'Email': 'dinevo2026@gmail.ua'
+    number: '+380956848943',
+    email: 'dinevo2026@gmail.ua'
 }
 
 export default function Home() {
