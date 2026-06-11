@@ -1,15 +1,17 @@
 import './Header.css';
 import Link from "next/link";
+
 interface Props {
   logoSrc: string;
   buttonText: string;
+  buttonIconSrc?: string;
   navLinks: {
     label: string;
     href: string;
   }[];
 }
 
-export default function Header({ logoSrc, buttonText, navLinks }: Props) {
+export default function Header({ logoSrc, buttonText, buttonIconSrc, navLinks }: Props) {
   return (
     <header className="header">
       <div className="container">
@@ -25,9 +27,12 @@ export default function Header({ logoSrc, buttonText, navLinks }: Props) {
           ))}
         </nav>
 
-        <button className="order-btn">
+        <Link href="/login" className="order-btn">
+          {buttonIconSrc && (
+            <img src={buttonIconSrc} alt="icon" className="btn-icon" />
+          )}
           {buttonText}
-        </button>
+        </Link>
       </div>
     </header>
   );

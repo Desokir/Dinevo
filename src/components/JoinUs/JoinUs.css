@@ -1,59 +1,158 @@
 .JoinUs {
-    color: black;
-    margin-bottom: 68px;
+  padding: 120px 20px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+
+  color: black;
 }
 
 .titleJoin {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 45px;
-}
-
-.titleJoin>p {
-    font-size: 36px;
-    font-weight: 600;
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  color: #000;
 }
 
 .outJoin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 90px;
+  width: 100%;
 }
 
 .boxJoin {
-    width: 400px;
-    /* height: 500px; */
-    /* border: 1px solid red; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+  width: 420px;
+  min-height: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  gap: 22px;
 }
 
 .boxJoin img {
-    width: 250px;        
-    height: 250px;       
-    border-radius: 50%;   
-    object-fit: cover;   
-    margin-bottom: 20px;  
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .titleOut {
-    font-size: 22px;
-    font-weight: 450;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
 }
 
 .deskOut {
-    font-size: 14px;
-    margin-top: 5px;
+  font-size: 19px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .signOut {
-    padding: 5px 10px;
-    background-color: rgba(1, 173, 41, 0.808);
-    border-radius: 12px;
-    color: white;
-    margin-top: 10px;
+  padding: 10px 22px;
+  background-color: rgb(4, 143, 4);
+  border-radius: 16px;
+  color: white;
+  font-size: 16px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.signOut:hover {
+  background-color: rgba(1, 130, 30, 0.9);
+}
+@media (max-width: 1440px) {
+  .JoinUs {
+    padding: 100px 20px 80px;
+    gap: 70px;
+  }
+
+  .titleJoin {
+    font-size: 46px;
+  }
+
+  .outJoin {
+    gap: 70px;
+  }
+
+  .boxJoin {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .outJoin {
+    gap: 50px;
+  }
+
+  .boxJoin {
+    width: 340px;
+  }
+
+  .titleJoin {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .JoinUs {
+    padding: 80px 20px;
+    gap: 60px;
+  }
+
+  .titleJoin {
+    font-size: 38px;
+  }
+
+  .outJoin {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .boxJoin {
+    width: 45%;
+  }
+
+  .boxJoin img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .titleOut {
+    font-size: 24px;
+  }
+
+  .deskOut {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleJoin {
+    font-size: 28px;
+    margin: 10%;
+  }
+
+  .outJoin {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .boxJoin {
+    width: 100%;
+    max-width: 320px;
+    margin: -17%;
+  }
+  
 }
