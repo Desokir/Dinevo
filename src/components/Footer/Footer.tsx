@@ -1,6 +1,7 @@
 'use client';
+
 import './Footer.css';
-import Link from "next/link";
+import Link from 'next/link';
 
 interface LinkItem {
     name: string;
@@ -14,14 +15,15 @@ interface ListContact {
 
 interface FooterProps {
     links: {
-        [key: string]: { name: string, link: string }
+        [key: string]: LinkItem;
     };
     categories: string[];
     contact: ListContact;
 }
 
 const OutLinks = ({ list }: { list: { [key: string]: LinkItem } }) => {
-    const items = Object.values(list || {});
+    const items = Object.values(list);
+
     return (
         <div className="footer-links">
             {items.map((item, index) => (
@@ -33,38 +35,52 @@ const OutLinks = ({ list }: { list: { [key: string]: LinkItem } }) => {
     );
 };
 
-const OutCategories = ({ list }: { list: string[] }) => {
-    return (
-        <div className="footer-categories">
-            {list.map((item, index) => (
-                <p key={index}>{item}</p>
-            ))}
-        </div>
-    );
-};
-
 const OutContacts = ({ list }: { list: ListContact }) => {
     return (
         <div className="footer-contacts">
-            <p><span>Number: </span>{list.number}</p>
-            <p><span>Email: </span>{list.email}</p>
+            <p>{list.number}</p>
+            <p>{list.email}</p>
         </div>
     );
 };
 
-export default function Footer({ links, categories, contact }: FooterProps) {
+export default function Footer({
+    links,
+    contact
+}: FooterProps) {
     return (
         <footer className="footer">
             <div className="footer-container">
 
-                <div className="footer-logo">
-                    <img src="/LogoOrange.png" alt="logo" />
+                <div className="footer-column">
+                    <h3>Меню сайту</h3>
+                    <OutLinks list={links} />
                 </div>
 
-                <OutLinks list={links} />
-                <OutCategories list={categories} />
-                <OutContacts list={contact} />
+                <div className="footer-column">
+                    <h3>Авторизація</h3>
 
+                    <div className="footer-links">
+                        <Link href="/login">Увійти як користувач</Link>
+                        <Link href="/delivery-login">Увійти як кур'єр</Link>
+                    </div>
+                </div>
+
+                <div className="footer-column">
+                    <h3>Оплата</h3>
+
+                    <div className="payment-icons">
+                        <img src="/Visa.png" alt="Visa" />
+                        <img src="/logos_mastercard.png" alt="Mastercard" />
+                        <img src="/simple-icons_applepay.png" alt="Apple Pay" />
+                        <img src="/logos_google-pay.png" alt="Google Pay" />
+                    </div>
+                </div>
+
+                <div className="footer-column">
+                    <h3>Контакти</h3>
+                    <OutContacts list={contact} />
+                </div>
             </div>
         </footer>
     );
