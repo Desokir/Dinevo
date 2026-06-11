@@ -5,7 +5,9 @@ import JoinUs from "@/src/components/JoinUs/JoinUs";
 import join1 from '@/public/join1.png'
 import join2 from '@/public/join2.png'
 import join3 from '@/public/join3.png'
+import card1 from '@/public/card1.png'
 import Link from "next/link";
+import ChooseNow from "@/src/components/Choose/Choose";
 
 const linksFooter = {
     'l1': {
@@ -36,17 +38,60 @@ const Join = {
         'title': 'Стати кур\'єром',
         'desk': 'Вас цікавить конкурентоспроможна оплата, гнучкий графік і повна самостійність? Доставляйте з Glovo!',
         'img': join1
-    }, 
+    },
     'p2': {
         'title': 'Стати партнером',
         'desk': 'Прискорюйте зростання бізнесу разом із Glovo! Наші технології та база користувачів — ідеальний рецепт для збільшення продажів і відкриття нових можливостей!',
         'img': join2
-    }, 
+    },
     'p3': {
         'title': 'Вакансії',
         'desk': 'Готові до нового, захоплюючого етапу на своєму шляху? Нашій команді потрібні саме такі, як ви — амбітні, прості та приємні в спілкуванні!',
         'img': join3
     }
+}
+
+const choose = {
+    'c1': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
+    'c2': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
+    'c3': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
+    'c4': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
+    'c5': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    }, 
+    'c6': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
+    'c7': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
+    'c8': {
+        'name': 'McDonalt`s',
+        'adres': 'вулиця Дерибасівська, 23',
+        'photo': card1
+    },
 }
 
 export default function Home() {
@@ -64,8 +109,9 @@ export default function Home() {
             />
 
             <div>
-                <Benefit></Benefit>
-                <JoinUs title='Приєднуйтеся до нас' desk={Join} />
+                {/* <Benefit></Benefit> */}
+                {/* <JoinUs title='Приєднуйтеся до нас' desk={Join} /> */}
+                <ChooseNow title='Choose Now' chooseList={choose} />
             </div>
             <Footer links={linksFooter} categories={categoriFooter} contact={contacts} />
         </main>
