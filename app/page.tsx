@@ -3,9 +3,9 @@ import Footer from "@/src/components/Footer/Footer";
 import Header from "@/src/components/Header/Header";
 import JoinUs from "@/src/components/JoinUs/JoinUs";
 import ChooseNow from "@/src/components/Choose/Choose";
-import join1 from '@/public/join1.png';
-import join2 from '@/public/join2.png';
-import join3 from '@/public/join3.png';
+import join1 from '@/public/Deliver.png';
+import join2 from '@/public/Indus.png';
+import join3 from '@/public/koreec.png';
 import card1 from '@/public/card1.png';
 
 const linksFooter = {
