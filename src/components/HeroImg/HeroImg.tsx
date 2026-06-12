@@ -28,8 +28,6 @@ const HeroImg: FC<HeroImgProps> = ({ title, heroList }) => {
               <Image
                 src={item.photo}
                 alt={item.name}
-                width={58}
-                height={58}
               />
               <span>{item.name}</span>
             </div>

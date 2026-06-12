@@ -59,6 +59,10 @@ const choose = {
     'c6': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
     'c7': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
     'c8': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
+    'c9': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
+    'c10': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
+    'c11': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
+    'c12': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
 };
 
 const HeroName = {
