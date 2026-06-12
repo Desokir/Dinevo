@@ -3,7 +3,6 @@ import Footer from "@/src/components/Footer/Footer";
 import Header from "@/src/components/Header/Header";
 import JoinUs from "@/src/components/JoinUs/JoinUs";
 import ChooseNow from "@/src/components/Choose/Choose";
-
 import join1 from '@/public/join1.png';
 import join2 from '@/public/join2.png';
 import join3 from '@/public/join3.png';
@@ -69,8 +68,8 @@ export default function Home() {
             />
 
             <div className="flex flex-col gap-16 w-full max-w-[1203px] mx-auto px-5">
-                <Benefit />
                 <ChooseNow title='Choose Now' chooseList={choose} />
+                <Benefit />
                 <JoinUs title='Приєднуйтеся до нас' desk={Join} />
             </div>
 
