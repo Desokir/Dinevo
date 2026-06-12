@@ -1,0 +1,94 @@
+.hero {
+  width: 100%;
+  height: 727px;
+
+  background: #ff6438;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__container {
+  width: 100%;
+  max-width: 1600px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 170px;
+  box-sizing: border-box;
+}
+
+/* ---------- Левая часть ---------- */
+
+.hero__left {
+  display: flex;
+  align-items: center;
+}
+
+.hero__left h1 {
+  margin: 0;
+
+  width: 380px;
+
+  color: #fff;
+
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* ---------- Правая часть ---------- */
+
+.hero__right {
+  display: grid;
+
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(3, 160px);
+
+  gap: 20px;
+}
+
+/* ---------- Карточка ---------- */
+
+.hero__card {
+  width: 160px;
+  height: 160px;
+
+  background: #f2f2f2;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+}
+
+
+.hero__card img {
+  width: 134px;
+  height: 75px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero__card span,
+.hero__card p {
+  margin-top: 12px;
+
+  width: 120px;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+
+  color: #1d1d1d;
+}
