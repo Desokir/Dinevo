@@ -17,6 +17,7 @@ import hero6 from '@/public/hero6.svg';
 import hero7 from '@/public/hero7.svg';
 import hero8 from '@/public/hero8.svg';
 import hero9 from '@/public/hero9.svg';
+import HeroImg from "@/src/components/HeroImg/HeroImg";
 
 const linksFooter = {
     'l1': { 'name': 'Головна', 'link': '/' },
