@@ -1,0 +1,73 @@
+@keyframes slide-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider-food-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  padding: 16px 0;
+}
+
+.slider-food-track {
+  display: flex;
+  gap: 30px; 
+}
+
+.animate-infinite-scroll {
+  animation-name: slide-scroll;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+.food-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  flex-shrink: 0;
+  text-align: center;
+  user-select: none;
+}
+
+.food-card-icon-wrap {
+  width: 80px;
+  height: 80px;
+  min-height: 80px;
+  /* background-color: #382929; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  overflow: hidden;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  position: relative;
+}
+
+.food-card-img {
+  /* width: 50px; */
+  height: 50px;
+  object-fit: contain;
+}
+
+.food-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+  word-break: break-word;
+  width: 100%;
+  padding: 0 4px;
+}

@@ -1,0 +1,79 @@
+/* Внешняя оранжевая плашка на весь экран */
+.HoroImgContainer {
+    background-color: #FF5E32;
+    width: 100%;
+    overflow: hidden;
+    height: 723px; /* Четкая высота твоего баннера */
+}
+
+/* Ограничитель контента по центру сетки (1218px) */
+.HoroImgContent {
+    max-width: 1218px; 
+    width: 100%;
+    height: 100%; /* Занимает все 723px высоты */
+    margin: 0 auto;
+    padding: 0 20px; /* Убрали верхние/нижние паддинги, чтобы не мешать прижатию */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрирует текст по вертикали */
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Стили для большого текста слева */
+.titleNameInPage {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    max-width: 450px; /* Ограничение ширины текста для правильного переноса */
+    margin: 0;
+    z-index: 2;
+}
+
+/* Контейнер для картинки, который растянут на всю высоту и прижат к низу */
+.imgHeroWrapper {
+    display: flex;
+    align-items: flex-end; /* Опускает вложенную картинку на дно */
+    height: 100%;          
+    margin-bottom: 0;      
+}
+
+/* Сама картинка курьера */
+.imgHero {
+    width: auto;
+    /* height: 640px;         Оптимальный размер курьера под высоту баннера 723px */
+    object-fit: contain;
+    display: block;        /* Убирает системный нижний отступ картинок */
+    margin-top: auto;      /* Принудительно выталкивает на дно flex-контейнера */
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 900px) {
+    .HoroImgContainer {
+        height: auto; /* Сбрасываем жесткую высоту на экранах поменьше */
+    }
+
+    .HoroImgContent {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .titleNameInPage {
+        max-width: 100%;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .imgHeroWrapper {
+        height: auto;
+        align-self: center;
+    }
+
+    .imgHero {
+        height: 320px;
+    }
+}
