@@ -85,7 +85,7 @@ export default function RestaurantsPage() {
                 logoSrc="/Logo11.png"
                 navLinks={[
                     { label: "Головна", href: "/" },
-                    { label: "Меню", href: "/menu" },
+                    { label: "Меню", href: "/app/menu/page.tsx" },
                     { label: "Доставка", href: "/delivery" },
                     { label: "Контакти", href: "/contacts" }
                 ]}
