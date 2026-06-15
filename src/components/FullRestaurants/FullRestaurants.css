@@ -1,0 +1,67 @@
+.chooseItem {
+    display: grid;
+    grid-template-columns: repeat(3, 386px);
+    gap: 30px;
+    padding: 20px 0;
+    width: 100%;
+    justify-content: start;
+}
+
+.chooseCard {
+    width: 386px;
+    height: 203px;
+    background: #ffffff;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.imgCard {
+    width: 100%;
+    height: 130px;
+    position: relative;
+}
+
+.chooseImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textCard {
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #ffffff;
+}
+
+.chooseName {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ChooseAdres {
+    font-size: 12px;
+    color: #666666;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+@media (max-width: 1300px) {
+    .chooseItem {
+        grid-template-columns: repeat(2, 386px);
+    }
+}
+
+@media (max-width: 850px) {
+    .chooseItem {
+        grid-template-columns: repeat(1, 386px);
+        justify-content: center;
+    }
+}

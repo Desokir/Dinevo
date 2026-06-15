@@ -1,0 +1,91 @@
+.deliverySection {
+    max-width: 1218px;
+    width: 100%;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.deliveryTitle {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e110e;
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+
+.mapContainer {
+    width: 1214px;
+    height: 979px; 
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 32px;
+}
+
+.citiesGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px 24px;
+    width: 100%;
+}
+
+.cityButton {
+    background-color: #ffffff;
+    border: 1px solid #CBC5C4;
+    border-radius: 12px;
+    padding: 14px 10px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #A29A99;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    background-clip: padding-box;
+}
+
+.cityButton.active {
+    border: 2px solid #FF5E32;
+    color: #FF5E32;
+    font-weight: 700;
+    background-color: #FFF2EE;
+    cursor: default;
+}
+
+/* Сдвигаем Львов и Чернигов на вторую строку точно под Одессу и Харьков */
+.cityButton:nth-child(7) {
+    grid-column: 3;
+}
+.cityButton:nth-child(8) {
+    grid-column: 4;
+}
+
+/* Адаптив под планшеты и мобилки */
+@media (max-width: 1024px) {
+    .citiesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .cityButton:nth-child(7),
+    .cityButton:nth-child(8) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .deliveryTitle {
+        font-size: 32px;
+    }
+    .mapContainer {
+        height: 400px;
+    }
+    .citiesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
