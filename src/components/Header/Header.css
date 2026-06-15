@@ -3,7 +3,10 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: #000000;
+  /* background-image: url('/Backgroundheader.png'); */
+  background: linear-gradient(to top,
+     #4b4949 0%  ,
+      #121212 100%);
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -59,7 +62,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
-   display: flex;
+  display: flex;
   align-items: center;
   gap: 8px;
 }
@@ -70,6 +73,7 @@
   height: 16px;
   object-fit: contain;
 }
+
 .order-btn:hover {
   transform: translateY(-1px);
 }

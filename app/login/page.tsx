@@ -9,7 +9,7 @@ export default function Page() {
 
   const handleLogin = () => {
     localStorage.setItem("auth", "true");
-    router.push("/");
+    router.push("/restaurants");
   };
 
   return (

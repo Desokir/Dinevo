@@ -1,14 +1,20 @@
 .JoinUs {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 120px 20px 100px;
-  max-width: 1200px;
-  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 80px;
 
+  background-image: url('/BackgroundJoinUS.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: black;
+
 }
 
 .titleJoin {
@@ -72,6 +78,7 @@
 .signOut:hover {
   background-color: rgba(1, 130, 30, 0.9);
 }
+
 @media (max-width: 1440px) {
   .JoinUs {
     padding: 100px 20px 80px;
@@ -152,7 +159,7 @@
   .boxJoin {
     width: 100%;
     max-width: 320px;
-    margin: -17%;
+    margin: -10%;
   }
-  
+
 }
