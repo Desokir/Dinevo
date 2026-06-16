@@ -1,0 +1,106 @@
+/* Основной контейнер секции */
+.restaurantsSection {
+    max-width: 1218px;
+    width: 100%;
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Крупный заголовок по центру "Ресторани в м. Одеса" */
+.gridTitle {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e110e;
+    text-align: center;
+    margin: 0 0 50px 0;
+}
+
+/* Сетка — 4 колонки в ряд под круглые карточки */
+.restaurantsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px; /* Отступы между карточками */
+    width: 100%;
+}
+
+/* Элемент карточки (контейнер теперь прозрачный и центрирует контент) */
+.restaurantCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+}
+
+/* Идеальный круг для картинки заведения */
+.cardImageWrapper {
+    width: 282px;
+    height: 282px;
+    position: relative;
+    border-radius: 50%; /* Делает блок круглым */
+    overflow: hidden;    /* Обрезает края картинки */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Эффект легкого увеличения при наведении на круг */
+.cardImageWrapper:hover {
+    transform: scale(1.03);
+}
+
+.cardImage {
+    object-fit: cover; /* Картинка полностью заполняет круг без деформации */
+}
+
+/* Блок с текстом под кругом */
+.cardInfo {
+    padding: 0;
+    background: none;
+}
+
+/* Название ресторана (жирный шрифт из Figma) */
+.restaurantName {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 6px 0;
+}
+
+/* Адрес заведения */
+.restaurantAddress {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+/* --- Адаптивность для мобильных экранов --- */
+@media (max-width: 1100px) {
+    .restaurantsGrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+        justify-items: center;
+    }
+    .gridTitle {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .restaurantsGrid {
+        grid-template-columns: 1fr; /* 1 колонка на смартфонах */
+    }
+    .gridTitle {
+        font-size: 28px;
+    }
+    .cardImageWrapper {
+        width: 220px;
+        height: 220px;
+    }
+}

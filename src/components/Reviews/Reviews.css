@@ -1,0 +1,120 @@
+/* Основной контейнер блока отзывов */
+.reviewsSection {
+    max-width: 1218px;
+    width: 100%;
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Центрированный заголовок секции */
+.reviewsTitle {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e110e;
+    text-align: center;
+    margin: 0 0 48px 0;
+}
+
+/* Сетка карточек — 3 колонки */
+.reviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+/* Стили карточки отзыва */
+.reviewCard {
+    background-color: #ffffff;
+    border: 2px solid #FF5E32; /* Тонкая оранжевая рамка из Figma */
+    border-radius: 16px;       /* Мягкое скругление углов */
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+}
+
+/* Шапка внутри карточки: выравнивает автора слева и звезды справа */
+.cardTopHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Инфо об авторе (аватар + имя) */
+.authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Круглая обертка для мини-аватарки */
+.avatarWrapper {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.authorAvatar {
+    object-fit: cover;
+}
+
+/* Имя автора отзыва */
+.authorName {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e110e;
+}
+
+/* Контейнер со звездочками */
+.starsRating {
+    display: flex;
+    gap: 4px;
+}
+
+/* Стили иконок звезд */
+.starIcon path {
+    stroke: #FF5E32; /* Оранжевый контур звезд */
+}
+
+/* Стили самого текста отзыва */
+.reviewText {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #1e110e;
+    margin: 0;
+    text-align: left;
+}
+
+/* --- Адаптивность под планшеты и мобилки --- */
+@media (max-width: 1024px) {
+    .reviewsGrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд */
+    }
+    .reviewsTitle {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviewsGrid {
+        grid-template-columns: 1fr; /* 1 карточка в ряд на телефонах */
+        gap: 20px;
+    }
+    .reviewsTitle {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+    .reviewCard {
+        padding: 20px;
+    }
+}

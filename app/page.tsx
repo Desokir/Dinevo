@@ -22,12 +22,12 @@ const linksFooter = {
     'l1': { 'name': 'Головна', 'link': '/' },
     'l2': { 'name': 'Меню', 'link': '/menu' },
     'l3': { 'name': 'Доставка', 'link': '/delivery' },
-    'l4': { 'name': 'Контакти', 'link': '/contacts' }
+    'l4': { 'name': 'Контакти', 'link': '/about' }
 };
 
 const categoriFooter = ['Ресторани', 'Супермаркети', 'Аптеки', 'Квіти'];
 
-const contacts = {
+const about = {
     number: '+380956848943',
     email: 'dinevo2026@gmail.ua'
 };
@@ -116,7 +116,7 @@ export default function Home() {
                     { label: "Головна", href: "/" },
                     { label: "Меню", href: "/menu" },
                     { label: "Доставка", href: "/delivery" },
-                    { label: "Контакти", href: "/contacts" }
+                    { label: "Контакти", href: "/about" }
                 ]}
                 buttonText="Login"
                 buttonIconSrc="/login.png"
@@ -129,7 +129,7 @@ export default function Home() {
                 <JoinUs title='Приєднуйтеся до нас' desk={Join} />
             </div>
 
-            <Footer links={linksFooter} categories={categoriFooter} contact={contacts} />
+            <Footer links={linksFooter} categories={categoriFooter} contact={about} />
         </main>
     );
 }
