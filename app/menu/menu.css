@@ -1,4 +1,4 @@
-/* ─── Reset & base ─────────────────────────────────────────────── */
+
 *,
 *::before,
 *::after {
@@ -13,7 +13,6 @@ body {
   color: #1a1a1a;
 }
 
-/* ─── Layout ───────────────────────────────────────────────────── */
 .page-wrap {
   display: flex;
   gap: 20px;
@@ -28,7 +27,6 @@ body {
   min-width: 0;
 }
 
-/* ─── Category sidebar ─────────────────────────────────────────── */
 .cat-sidebar {
   width: 155px;
   flex-shrink: 0;
@@ -88,8 +86,25 @@ body {
   color: #e8440e;
   font-weight: 600;
 }
+.floating-logo {
+  position: fixed;
+  top: -10px;
+  left: 16px;
+  z-index: 9999;
+  width: 104px;
+  height: 104px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* ─── Hero ─────────────────────────────────────────────────────── */
+.floating-logo img {
+ 
+  object-fit: contain;
+}
+
+
 .hero {
   position: relative;
   width: 100%;
@@ -143,7 +158,6 @@ body {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
-/* ─── Menu section ─────────────────────────────────────────────── */
 .menu-section {
   margin-bottom: 36px;
   scroll-margin-top: 24px;
@@ -156,14 +170,12 @@ body {
   margin-bottom: 14px;
 }
 
-/* ─── Cards grid ───────────────────────────────────────────────── */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
-/* ─── Card ─────────────────────────────────────────────────────── */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -256,8 +268,6 @@ body {
 .card-btn:hover {
   background: #c43a0b;
 }
-
-/* ─── Order sidebar ────────────────────────────────────────────── */
 .order-sidebar {
   width: 230px;
   flex-shrink: 0;
@@ -354,7 +364,6 @@ body {
   background: #c43a0b;
 }
 
-/* ─── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .order-sidebar {
     width: 195px;
