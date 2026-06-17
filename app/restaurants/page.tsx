@@ -22,12 +22,12 @@ const linksFooter = {
     'l1': { 'name': 'Головна', 'link': '/' },
     'l2': { 'name': 'Меню', 'link': '/menu' },
     'l3': { 'name': 'Доставка', 'link': '/delivery' },
-    'l4': { 'name': 'Контакти', 'link': '/contacts' }
+    'l4': { 'name': 'Контакти', 'link': '/about' }
 };
 
 const categoriesFooter = ['Ресторани', 'Супермаркети', 'Аптеки', 'Квіти'];
 
-const contacts = {
+const about = {
     number: '+380956848943',
     email: 'dinevo2026@gmail.ua'
 };
@@ -84,7 +84,7 @@ export default function RestaurantsPage() {
                     { label: "Головна", href: "/" },
                     { label: "Меню", href: "/app/menu/page.tsx" },
                     { label: "Доставка", href: "/delivery" },
-                    { label: "Контакти", href: "/contacts" }
+                    { label: "Контакти", href: "/about" }
                 ]}
                 buttonText="Login"
                 buttonIconSrc="/login.png"
@@ -103,7 +103,7 @@ export default function RestaurantsPage() {
                 <Link href="/menu"><FullRestaurants list={restaurantsData} /></Link>
             </main>
 
-            <Footer links={linksFooter} categories={categoriesFooter} contact={contacts} />
+            <Footer links={linksFooter} categories={categoriesFooter} contact={about} />
         </div>
     );
 }

@@ -35,9 +35,9 @@ const OutLinks = ({ list }: { list: { [key: string]: LinkItem } }) => {
     );
 };
 
-const OutContacts = ({ list }: { list: ListContact }) => {
+const Outabout = ({ list }: { list: ListContact }) => {
     return (
-        <div className="footer-contacts">
+        <div className="footer-about">
             <p>{list.number}</p>
             <p>{list.email}</p>
         </div>
@@ -79,7 +79,7 @@ export default function Footer({
 
                 <div className="footer-column">
                     <h3>Контакти</h3>
-                    <OutContacts list={contact} />
+                    <Outabout list={contact} />
                 </div>
             </div>
         </footer>
