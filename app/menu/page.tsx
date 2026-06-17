@@ -28,7 +28,7 @@ interface CartEntry {
 const RESTAURANT = {
   name: "Папа Гіві",
   isOpen: false,
-  cover:"/PapaGiviBaner.png",
+  cover:"/Rectangle 83.png",
   logo: "/LogoPapaGivi.png",
 };
 
@@ -747,7 +747,27 @@ export default function MenuPage() {
             <h1 className="hero-name">{RESTAURANT.name}</h1>
           </div>
         </div>
+<div className="mobile-menu">
+  <h2 className="mobile-menu-title">Меню</h2>
 
+  <div className="mobile-categories">
+    {CATEGORIES.map((cat) => (
+      <button
+        key={cat.id}
+        className={`mobile-cat ${
+          activeId === cat.id ? "mobile-cat--active" : ""
+        }`}
+        onClick={() =>
+          document
+            .getElementById(cat.id)
+            ?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        {cat.label}
+      </button>
+    ))}
+  </div>
+</div>
         {CATEGORIES.map((cat) => (
           <MenuSection key={cat.id} cat={cat} onAdd={handleAdd} />
         ))}

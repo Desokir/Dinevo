@@ -7,6 +7,16 @@ import join1 from '@/public/Deliver.png';
 import join2 from '@/public/Indus.png';
 import join3 from '@/public/koreec.png';
 import card1 from '@/public/card1.png';
+import card2 from '@/public/Rectangle 53 (3).png';
+import card3 from '@/public/Rectangle 35 (4).png';
+import card4 from '@/public/Rectangle 47.png';
+import card5 from '@/public/Rectangle 62.png';
+import card6 from '@/public/Rectangle 49 (19).png';
+import card7 from '@/public/Rectangle 49 (20).png';
+import card8 from '@/public/Rectangle 49 (21).png';
+import card9 from '@/public/Rectangle 49 (22).png';
+
+
 import hero1 from '@/public/hero1.svg';
 import hero2 from '@/public/hero2.svg';
 import hero3 from '@/public/hero3.svg';
@@ -52,17 +62,14 @@ const Join = {
 
 const choose = {
     'c1': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c2': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c3': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c4': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c5': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c6': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c7': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c8': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c9': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c10': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c11': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
-    'c12': { 'name': "McDonald's", 'adres': 'вулиця Дерибасівська, 23', 'photo': card1 },
+    'c2': { 'name': "Papa Givi", 'adres': 'вулиця Незалежності, 15/1', 'photo': card2 },
+    'c3': { 'name': "KFC", 'adres': 'вулиця Дерибасівська, 23', 'photo': card3 },
+    'c4': { 'name': "Пузата хата", 'adres': 'вулиця Дерибасівська, 24', 'photo': card4 },
+    'c5': { 'name': "Yapiko", 'adres': 'вулиця Академіка Вільямса, 59-К', 'photo': card5  },
+    'c6': { 'name': "Alibaba", 'adres': 'вулиця Дерибасівська, 30', 'photo': card6  },
+    'c7': { 'name': "Кларабара", 'adres': 'вулиця Преображенська, 28', 'photo': card7  },
+    'c8': { 'name': "Сало", 'adres': ' вул. Італійська, 50', 'photo': card8 },
+ 'c9': { 'name': "Рандеву", 'adres': 'вулиця Успенська, 93', 'photo': card9 }
 };
 
 const HeroName = {

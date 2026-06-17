@@ -2,41 +2,45 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import "@/app/login/Login.css";
+import "@/app/register/Register.css";
 
-export default function Page() {
+export default function RegisterPage() {
   const router = useRouter();
 
   const handleRegister = () => {
     localStorage.setItem("auth", "true");
-    router.push("/");
+    router.push("/restaurants");
   };
 
   return (
     <div className="auth">
+      <div className="auth-card">
+        
+        <div className="auth-left">
+          
+          <div className="auth-logo">
+            <img src="/Logo11.png" alt="logo" />
+          </div>
 
-      <Link href="/" className="authLogo">
-        <img src="/Logo11.png" alt="logo" />
-      </Link>
+          <h1>РЕЄСТРАЦІЯ</h1>
 
-      <div className="authCard">
+          <input className="auth-input" type="text" placeholder="Ім'я" />
+          <input className="auth-input" type="email" placeholder="Пошта" />
+          <input className="auth-input" type="password" placeholder="Пароль" />
 
-        <h1 className="authTitle">Реєстрація</h1>
+          <button className="auth-btn" onClick={handleRegister}>
+            Зареєструватися
+          </button>
 
-        <input className="authInput" placeholder="Ім'я" />
-        <input className="authInput" placeholder="Пошта або номер" />
-        <input className="authInput" type="password" placeholder="Пароль" />
+          <div className="auth-switch">
+            Вже є акаунт?
+            <Link href="/login">Увійти</Link>
+          </div>
+        </div>
 
-        <button className="authBtn" onClick={handleRegister}>
-          Зареєструватися
-        </button>
-
-        <p className="authText">
-          Вже є акаунт?{" "}
-          <Link href="/login" className="authLink">
-            Увійти
-          </Link>
-        </p>
+        <div className="auth-right">
+          <img src="/Group 209.png" alt="courier" />
+        </div>
 
       </div>
     </div>

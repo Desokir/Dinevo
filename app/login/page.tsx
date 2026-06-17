@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import "@/app/login/Login.css";
+import "./Login.css";
 
 export default function Page() {
   const router = useRouter();
@@ -14,30 +14,47 @@ export default function Page() {
 
   return (
     <div className="auth">
+      <div className="auth-card">
 
-      <div className="authLogoWrap">
-        <Link href="/" className="authLogo">
-          <img src="/Logo11.png" alt="logo" />
-        </Link>
-      </div>
+        <div className="auth-left">
 
-      <div className="authCard">
-
-        <h1 className="authTitle">Вхід</h1>
-
-        <input className="authInput" placeholder="Пошта або номер" />
-        <input className="authInput" type="password" placeholder="Пароль" />
-
-        <button className="authBtn" onClick={handleLogin}>
-          Увійти
-        </button>
-
-        <p className="authText">
-          Немає акаунта?{" "}
-          <Link href="/register" className="authLink">
-            Зареєструватися
+          <Link href="/" className="auth-logo">
+            <img src="/Logo11.png" alt="logo" />
           </Link>
-        </p>
+
+          <h1>Увійти</h1>
+
+          <input
+            type="email"
+            placeholder="Пошта"
+            className="auth-input"
+          />
+
+          <input
+            type="password"
+            placeholder="Пароль"
+            className="auth-input"
+          />
+
+          <button
+            className="auth-btn"
+            onClick={handleLogin}
+          >
+            Увійти
+          </button>
+
+          <p className="auth-switch">
+            Немає акаунта?
+            <Link href="/register">
+              Зареєструватися
+            </Link>
+          </p>
+
+        </div>
+
+        <div className="auth-right">
+          <img src="/Group 209.png" alt="" />
+        </div>
 
       </div>
     </div>
