@@ -109,7 +109,7 @@ const HeroName = {
 export default function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
-            {/* Настройки Хедера взяты из входящей ветки с кнопкой Login */}
+           
             <Header
                 logoSrc="/Logo11.png"
                 navLinks={[

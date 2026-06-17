@@ -733,11 +733,12 @@ export default function MenuPage() {
       <CategorySidebar activeId={activeId} />
 
       <main className="page-main">
-      <Link href="/" className="floating-logo">
+      
+<Link href="/" className="floating-logo">
   <img src="/Logo11.png" alt="logo" />
 </Link>
-
         <div className="hero">
+          
           <img src={RESTAURANT.cover} alt={RESTAURANT.name} className="hero-cover" />
           <div className="hero-overlay">
             <div className="hero-logo-wrap">

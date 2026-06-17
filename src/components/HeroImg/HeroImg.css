@@ -21,7 +21,6 @@
   box-sizing: border-box;
 }
 
-/* ---------- Левая часть ---------- */
 
 .hero__left {
   display: flex;
@@ -40,7 +39,6 @@
   line-height: 1.15;
 }
 
-/* ---------- Правая часть ---------- */
 
 .hero__right {
   display: grid;
@@ -51,7 +49,6 @@
   gap: 20px;
 }
 
-/* ---------- Карточка ---------- */
 
 .hero__card {
   width: 160px;
@@ -91,4 +88,118 @@
   line-height: 16px;
 
   color: #1d1d1d;
+}
+
+
+@media (max-width: 1200px) {
+  .hero__container {
+    padding: 0 60px;
+  }
+
+  .hero__left h1 {
+    font-size: 72px;
+    width: 320px;
+  }
+
+  .hero__right {
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(3, 140px);
+    gap: 16px;
+  }
+
+  .hero__card {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero__card img {
+    width: 110px;
+    height: 60px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .hero__container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  .hero__left h1 {
+    font-size: 56px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__right {
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+  }
+
+  .hero__card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero__card img {
+    width: 90px;
+    height: 50px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .hero__container {
+    padding: 0 20px;
+  }
+
+  .hero__left h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .hero__right {
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: auto;
+  }
+
+  .hero__card {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+  }
+
+  .hero__card span,
+  .hero__card p {
+    font-size: 11px;
+    width: 100px;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .hero__left h1 {
+    font-size: 30px;
+  }
+
+  .hero__right {
+    grid-template-columns: repeat(2, 100px);
+    gap: 10px;
+  }
+
+  .hero__card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero__card img {
+    width: 70px;
+    height: 40px;
+  }
 }

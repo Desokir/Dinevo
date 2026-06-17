@@ -22,7 +22,7 @@ function FullRestaurants({ list }: FullRestaurantsProps) {
             {items.map((item, index) => (   
                 <div key={index} className='chooseCard'>
                     <div className='imgCard'>
-                        <Image className='chooseImg' src={item.photo} alt={item.name} />
+                        <Image className='chooseImg' width={200} height={200} src={item.photo} alt={item.name} />
                     </div>
                     <div className='textCard'>
                         <p className='chooseName'>{item.name}</p>
