@@ -121,7 +121,7 @@ export default function Home() {
                 logoSrc="/Logo11.png"
                 navLinks={[
                     { label: "Головна", href: "/" },
-                    { label: "Меню", href: "/menu" },
+                    { label: "Меню", href: "/restaurants" },
                     { label: "Доставка", href: "/delivery" },
                     { label: "Про нас", href: "/about" }
                 ]}

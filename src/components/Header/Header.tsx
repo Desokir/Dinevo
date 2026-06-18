@@ -17,7 +17,7 @@ export default function Header({
   buttonIconSrc,
   navLinks = [
     { label: "Головна", href: "/" },
-    { label: "Меню", href: "/menu" },
+    { label: "Меню", href: "/restaurants" },
     { label: "Про нас", href: "/contacts" },
   ],
 }: Props) {

@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import "@/app/menu/menu.css";
 import Link from "next/link";
-
+// Путь к Header может отличаться в зависимости от структуры вашего проекта:
+// import Header from "@/components/Header"; 
+import Header from "@/src/components/Header/Header";
 
 interface MenuItem {
     id: string;
@@ -621,54 +623,42 @@ function MenuSection({
             </div>
         </section>
     );
-
-
 }
 
-function CategorySidebar({
-    activeId,
-}: {
-    activeId: string;
-}) {
-    const scrollTo = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-
+function CategorySidebar({ activeId }: { activeId: string }) {
     return (
-        <nav className="cat-sidebar">
-            <p className="cat-sidebar-title">Меню</p>
+        <aside className="cat-sidebar">
+            <h2 className="cat-sidebar-title">Категорії</h2>
             <ul className="cat-list">
-                {CATEGORIES.map((c) => (
-                    <li key={c.id}>
+                {CATEGORIES.map((cat) => (
+                    <li key={cat.id}>
                         <button
-                            className={`cat-item${activeId === c.id ? " cat-item--active" : ""}`}
-                            onClick={() => scrollTo(c.id)}
+                            className={`cat-item ${activeId === cat.id ? "cat-item--active" : ""}`}
+                            onClick={() =>
+                                document.getElementById(cat.id)?.scrollIntoView({
+                                    behavior: "smooth",
+                                })
+                            }
                         >
-                            {c.label}
+                            {cat.label}
                         </button>
                     </li>
                 ))}
             </ul>
-        </nav>
+        </aside>
     );
 }
 
 function OrderSidebar({ cart }: { cart: CartEntry[] }) {
     const total = cart.reduce((sum, e) => {
-        const price = typeof e.item.price === "number" ? e.item.price : 0;
-        return sum + price * e.qty;
+        const p = typeof e.item.price === "number" ? e.item.price : parseInt(e.item.price) || 0;
+        return sum + p * e.qty;
     }, 0);
 
     return (
         <aside className="order-sidebar">
-            <h3 className="order-title">Ваше замовлення</h3>
-
-            {!RESTAURANT.isOpen ? (
-                <div className="order-closed">
-                    <span className="order-closed-icon"><img src="/HomeKorzina.png" alt="" /></span>
-                    <p className="order-closed-text">Тимчасово не працює</p>
-                </div>
-            ) : cart.length === 0 ? (
+            <h2 className="order-title">Ваше замовлення</h2>
+            {cart.length === 0 ? (
                 <div className="order-closed">
                     <span className="order-closed-icon">🛒</span>
                     <p className="order-closed-text">Кошик порожній</p>
@@ -676,27 +666,29 @@ function OrderSidebar({ cart }: { cart: CartEntry[] }) {
             ) : (
                 <>
                     <ul className="order-list">
-                        {cart.map(({ item, qty }) => (
-                            <li key={item.id} className="order-row">
-                                <span className="order-row-name">{item.name}</span>
-                                <span className="order-row-qty">×{qty}</span>
+                        {cart.map((e) => (
+                            <li key={e.item.id} className="order-row">
+                                <span className="order-row-name">{e.item.name}</span>
+                                <span className="order-row-qty">x{e.qty}</span>
                                 <span className="order-row-price">
-                                    {typeof item.price === "number" ? item.price * qty : "—"} грн
+                                    {(typeof e.item.price === "number"
+                                        ? e.item.price
+                                        : parseInt(e.item.price) || 0) * e.qty}{" "}
+                                    грн
                                 </span>
                             </li>
                         ))}
                     </ul>
                     <div className="order-total">
-                        <span>Разом</span>
+                        <span>Разом:</span>
                         <span>{total} грн</span>
                     </div>
-                    <button className="order-btn">Оформити замовлення</button>
+                    <button className="menu-btn">Оформити замовлення</button>
                 </>
             )}
         </aside>
     );
 }
-
 
 export default function MenuPage() {
     const [activeId, setActiveId] = useState(CATEGORIES[0].id);
@@ -723,56 +715,64 @@ export default function MenuPage() {
     const handleAdd = (item: MenuItem) => {
         setCart((prev) => {
             const found = prev.find((e) => e.item.id === item.id);
-            if (found) return prev.map((e) => e.item.id === item.id ? { ...e, qty: e.qty + 1 } : e);
+            if (found) return prev.map((e) => (e.item.id === item.id ? { ...e, qty: e.qty + 1 } : e));
             return [...prev, { item, qty: 1 }];
         });
     };
 
     return (
-        <div className="page-wrap">
-            <CategorySidebar activeId={activeId} />
+        <>
+            <Header
+                logoSrc="/Logo11.png"
+                navLinks={[
+                    { label: "Головна", href: "/" },
+                    { label: "Меню", href: "/restaurants" },
+                    { label: "Доставка", href: "/delivery" },
+                    { label: "Про нас", href: "/about" }
+                ]}
+                buttonText="Login"
+                buttonIconSrc="/login.png"
+            />
 
-            <main className="page-main">
+            <div className="page-wrap">
+                <CategorySidebar activeId={activeId} />
 
-                <Link href="/" className="floating-logo">
-                    <img src="/Logo11.png" alt="logo" />
-                </Link>
-                <div className="hero">
-
-                    <img src={RESTAURANT.cover} alt={RESTAURANT.name} className="hero-cover" />
-                    <div className="hero-overlay">
-                        <div className="hero-logo-wrap">
-                            <img src={RESTAURANT.logo} alt="logo" className="hero-logo" />
+                <main className="page-main">
+                    <div className="hero">
+                        <img src={RESTAURANT.cover} alt={RESTAURANT.name} className="hero-cover" />
+                        <div className="hero-overlay">
+                            <div className="hero-logo-wrap">
+                                <img src={RESTAURANT.logo} alt="logo" className="hero-logo" />
+                            </div>
+                            <h1 className="hero-name">{RESTAURANT.name}</h1>
                         </div>
-                        <h1 className="hero-name">{RESTAURANT.name}</h1>
                     </div>
-                </div>
-                <div className="mobile-menu">
-                    <h2 className="mobile-menu-title">Меню</h2>
+                    <div className="mobile-menu">
+                        <h2 className="mobile-menu-title">Меню</h2>
 
-                    <div className="mobile-categories">
-                        {CATEGORIES.map((cat) => (
-                            <button
-                                key={cat.id}
-                                className={`mobile-cat ${activeId === cat.id ? "mobile-cat--active" : ""
-                                    }`}
-                                onClick={() =>
-                                    document
-                                        .getElementById(cat.id)
-                                        ?.scrollIntoView({ behavior: "smooth" })
-                                }
-                            >
-                                {cat.label}
-                            </button>
-                        ))}
+                        <div className="mobile-categories">
+                            {CATEGORIES.map((cat) => (
+                                <button
+                                    key={cat.id}
+                                    className={`mobile-cat ${activeId === cat.id ? "mobile-cat--active" : ""}`}
+                                    onClick={() =>
+                                        document
+                                            .getElementById(cat.id)
+                                            ?.scrollIntoView({ behavior: "smooth" })
+                                    }
+                                >
+                                    {cat.label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                {CATEGORIES.map((cat) => (
-                    <MenuSection key={cat.id} cat={cat} onAdd={handleAdd} />
-                ))}
-            </main>
+                    {CATEGORIES.map((cat) => (
+                        <MenuSection key={cat.id} cat={cat} onAdd={handleAdd} />
+                    ))}
+                </main>
 
-            <OrderSidebar cart={cart} />
-        </div>
+                <OrderSidebar cart={cart} />
+            </div>
+        </>
     );
 }
