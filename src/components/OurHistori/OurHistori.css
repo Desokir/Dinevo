@@ -1,0 +1,70 @@
+/* Контейнер для всей секции */
+.history-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px; /* Расстояние между карточками */
+    padding: 40px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    
+}
+
+/* Стили для самой карточки */
+.history-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Точные размеры из image_347466.png */
+    width: 594px;
+    height: 420px;
+    
+    /* Внутренние отступы (сверху побольше для иконки, по бокам для текста) */
+    padding: 40px 35px; 
+    box-sizing: border-box;
+    
+    /* Скругление, цвет фона и размытая тень */
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    
+    /* Плавное появление/наведение при желании */
+    transition: transform 0.2s ease;
+}
+
+/* Обертка для центрирования иконки */
+.history-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    height: 80px; /* Фиксированная высота для выравнивания */
+}
+
+/* Стилизация самих иконок (SVG или Img) */
+.history-icon svg, 
+.history-icon img {
+    width: auto;
+    height: 70px; /* Примерный размер оранжевых иконок */
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Текст описания */
+.history-text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.45;
+    color: #2c2c2c;
+    text-align: left; /* В макете выравнивание по левому краю */
+    
+    /* Если текст длинный — делаем аккуратный перенос */
+    overflow-y: auto; 
+    word-break: break-word;
+}
+
+/* Делаем жирным название компании "Dinevo", если оно не обернуто в теги на бэкенде */
+.history-text strong {
+    font-weight: 700;
+    color: #000000;
+}

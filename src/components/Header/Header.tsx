@@ -18,7 +18,7 @@ export default function Header({
   navLinks = [
     { label: "Головна", href: "/" },
     { label: "Меню", href: "/menu" },
-    { label: "Контакти", href: "/contacts" },
+    { label: "Про нас", href: "/contacts" },
   ],
 }: Props) {
   return (

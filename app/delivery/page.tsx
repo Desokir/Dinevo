@@ -12,7 +12,7 @@ const linksFooter = {
     'l1': { 'name': 'Головна', 'link': '/' },
     'l2': { 'name': 'Меню', 'link': '/menu' },
     'l3': { 'name': 'Доставка', 'link': '/delivery' },
-    'l4': { 'name': 'Контакти', 'link': '/about' }
+    'l4': { 'name': 'Про нас', 'link': '/about' }
 };
 
 const categoriesFooter = ['Ресторани', 'Супермаркети', 'Аптеки', 'Квіти'];
@@ -72,7 +72,7 @@ export default function RestaurantsPage() {
                     { label: "Головна", href: "/" },
                     { label: "Меню", href: "/menu" },
                     { label: "Доставка", href: "/delivery" },
-                    { label: "Контакти", href: "/about" }
+                    { label: "Про нас", href: "/about" }
                 ]}
                 buttonText="Login"
                 buttonIconSrc="/login.png"

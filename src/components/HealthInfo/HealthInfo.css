@@ -1,0 +1,103 @@
+/* Контейнер-обертка (без красных полос, просто мягкий нейтральный фон) */
+.health-info-wrapper {
+  width: 100%;
+  min-height: 265px;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcf9f9;
+}
+
+/* Главная карточка */
+.health-card {
+  width: 100%;
+  max-width: 1218px;
+  min-height: 265px;
+  background-color: #ffffff;
+  border: 1px solid #e2dcd8;
+  border-radius: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #4a3b32;
+}
+
+/* Левая колонка (О сервисе) */
+.card-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Разделитель */
+.card-divider {
+  display: none;
+  width: 1px;
+  background-color: rgba(74, 59, 50, 0.2);
+  margin: 0.5rem 0;
+}
+
+/* Правая колонка (Рекомендации) */
+.card-right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.recommendations-title {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #3a2d25;
+}
+
+.recommendations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendations-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.recommendations-list li:last-child {
+  margin-bottom: 0;
+}
+
+.list-dash {
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+.phone-highlight {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Адаптив для десктопа */
+@media (min-width: 768px) {
+  .health-card {
+    padding: 3rem;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  
+  .card-divider {
+    display: block;
+  }
+  
+  .card-left {
+    font-size: 1.125rem;
+  }
+}

@@ -78,7 +78,7 @@ export default function Footer({
                 </div>
 
                 <div className="footer-column">
-                    <h3>Контакти</h3>
+                    <h3>Про нас</h3>
                     <Outabout list={contact} />
                 </div>
             </div>
