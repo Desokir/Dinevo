@@ -1,5 +1,8 @@
+'use client';
+
 import "./Header.css";
 import Link from "next/link";
+import { useState } from "react";
 
 interface Props {
   logoSrc?: string;
@@ -21,6 +24,8 @@ export default function Header({
     { label: "Про нас", href: "/contacts" },
   ],
 }: Props) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container">
@@ -42,7 +47,33 @@ export default function Header({
           )}
           {buttonText}
         </Link>
+
+        <button
+          className={`burger${menuOpen ? " burger--open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Відкрити меню"
+          aria-expanded={menuOpen}
+        >
+          <span className="burger__line" />
+          <span className="burger__line" />
+          <span className="burger__line" />
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      <nav className={`mobile-nav${menuOpen ? " mobile-nav--open" : ""}`}>
+        {navLinks.map((item) => (
+          <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+            {item.label}
+          </Link>
+        ))}
+        <Link href="/login" className="mobile-nav__btn" onClick={() => setMenuOpen(false)}>
+          {buttonIconSrc && (
+            <img src={buttonIconSrc} alt="icon" className="btn-icon" />
+          )}
+          {buttonText}
+        </Link>
+      </nav>
     </header>
   );
 }

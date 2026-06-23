@@ -101,3 +101,19 @@
     font-size: 1.125rem;
   }
 }
+/* ─── Adaptive ─── */
+@media (max-width: 480px) {
+  .health-card {
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .card-left,
+  .card-right {
+    font-size: 0.9rem;
+  }
+
+  .recommendations-title {
+    font-size: 0.9rem;
+  }
+}

@@ -68,3 +68,42 @@
     font-weight: 700;
     color: #000000;
 }
+/* ─── Adaptive ─── */
+@media (max-width: 1280px) {
+    .history-container {
+        padding: 40px 24px;
+    }
+
+    .history-card {
+        width: 100%;
+        max-width: 594px;
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 32px 16px;
+    }
+
+    .history-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-text {
+        font-size: 15px;
+    }
+
+    .history-icon-wrapper {
+        height: 64px;
+    }
+}
